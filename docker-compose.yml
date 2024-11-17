@@ -52,17 +52,14 @@ services:
 #      - HTTPS_PROXY=http://127.0.0.1:3128
 #      - NO_PROXY=localhost,127.0.0.1
 
-  grass-app:
-    <<: *default-service
-    image: double2trouble/grass
+  heminetwork:
+    image: double2trouble/heminetwork:latest
+    container_name: heminetwork
     environment:
-      - NP_TOKEN=${NP_TOKEN_GRASS}
+      - POPM_BTC_PRIVKEY=${HEMI_POPM_BTC_PRIVKEY}
+      - POPM_STATIC_FEE=110
+      - POPM_BFG_URL=wss://testnet.rpc.hemi.network/v1/ws/public
     volumes:
-      - ./getgrass/no_proxy.py:/opt/app/no_proxy.py
-
-  nodepay:
-    <<: *default-service
-    image: kellphy/nodepay
-    environment:
-      - NP_COOKIE=${NP_COOKIE_NODEPAY}
-    stdin_open: true
+     - ./heminetwork-key:/key
+    mem_limit: 4g
+    cpus: 2
