@@ -2,6 +2,16 @@
 
 This guide helps you configure your Nexus Prover after the first start. A temporary manual step is required until the development team implements automatic creation and saving of the `prover-id`.
 
+## How to Start
+
+   ```bash
+   docker compose up -d
+   ```
+   To stop
+   ```bash
+   docker compose down
+   ```
+
 ## Steps to Configure
 
 1. **Start the Prover**  

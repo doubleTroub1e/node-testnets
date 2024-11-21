@@ -32,11 +32,12 @@ RUN curl -sSf https://sh.rustup.rs | sh -s -- -y && \
     rm -rf /root/.cargo/registry /root/.cargo/git && \
     echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
 
-RUN apt update && \
-    apt install -y --no-install-recommends \
-    protobuf-compiler       && \
-    rm -rf /var/lib/apt/lists/*
 
+RUN wget -q  https://github.com/protocolbuffers/protobuf/releases/download/v28.2/protoc-28.2-linux-x86_64.zip && \
+    unzip protoc-28.2-linux-x86_64.zip && \
+    mv bin/protoc /usr/local/bin/ && \
+    mv include/* /usr/local/include/ && \
+    rm protoc-28.2-linux-x86_64.zip
 
 
 # Set working directory

@@ -1,0 +1,18 @@
+---
+services:
+  nexus:
+    image: double2trouble/nexus:latest
+    container_name: nexus
+    volumes:
+      - ./nexus:/root/.nexus/
+    mem_limit: 2g
+    cpus: "2.0"
+    pull_policy: always
+    restart: unless-stopped
+    stop_signal: SIGINT
+    tty: true
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 1m
+        max-file: "1"
