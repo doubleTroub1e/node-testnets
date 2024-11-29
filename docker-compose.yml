@@ -40,13 +40,13 @@ services:
 
   blockmesh-cli:
     <<: *default-service
-    image: dknodes/blockmesh-cli_x86_64:latest
+    image: blockmesh/blockmesh-cli:latest
     container_name: blockmesh-cli
     mem_limit: 2g
     cpus: "2.0"
     environment:
-      - USER_EMAIL=${BLOCKMSH_USER_EMAIL}
-      - USER_PASSWORD=${BLOCKMSH_USER_PASSWORD}
+      - EMAIL=${BLOCKMSH_USER_EMAIL}
+      - PASSWORD=${BLOCKMSH_USER_PASSWORD}
 #      OPTIONAL: add some proxy with residental IP if login doesn't work in VPS
 #      - HTTP_PROXY=http://127.0.0.1:3128
 #      - HTTPS_PROXY=http://127.0.0.1:3128

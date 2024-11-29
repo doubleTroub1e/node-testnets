@@ -1,6 +1,16 @@
 # Nexus Prover Setup
 
-This guide helps you configure your Nexus Prover after the first start. A temporary manual step is required until the development team implements automatic creation and saving of the `prover-id`.
+This guide helps you configure your Nexus Prover after the first start. 
+
+## Prerequisite 
+
+1. Visit the official Nexus webpage: [https://beta.nexus.xyz/](https://beta.nexus.xyz/). Note that no referral code is required.
+2. In the bottom left corner, click on the account icon and link your email.
+3. Check your email inbox and confirm your email address.
+4. Return to [https://beta.nexus.xyz/](https://beta.nexus.xyz/). Your linked Prover ID will now appear in the bottom left corner. This ID is associated with your email. 
+   - Copy the Prover ID by tapping the copy icon and waiting for the "Copied!" confirmation message.
+5. Save the Prover ID in a file located at `./nexus/prover-id`.
+6. Proceed with the startup steps below.
 
 ## How to Start
 
